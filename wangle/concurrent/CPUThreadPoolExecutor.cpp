@@ -139,7 +139,7 @@ void CPUThreadPoolExecutor::threadRun(std::shared_ptr<Thread> thread) {
 void CPUThreadPoolExecutor::stopThreads(size_t n) {
   threadsToStop_ += n;
   for (size_t i = 0; i < n; i++) {
-    taskQueue_->addWithPriority(CPUTask(), Executor::LO_PRI);
+    taskQueue_->addWithPriority(CPUTask(), Executor::HI_PRI);
   }
 }
 
